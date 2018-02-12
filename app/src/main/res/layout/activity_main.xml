@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="jalanechrissia.rivera.com.midterm_itelective_timeralarm.MainActivity">
+
+    <TabHost
+        android:id="@+id/tabHost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></TabWidget>
+            
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                
+                <RelativeLayout
+                    android:id="@+id/alarm"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:background="#E580FF">
+                    
+                    <TimePicker
+                        android:id="@+id/timePicker"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Schedule an Alarm"
+                        android:onClick="scheduleAlarm"/>
+
+
+                    <Button
+                        android:id="@+id/stop_alarm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginBottom="47dp"
+                        android:layout_marginStart="30dp"
+                        android:text="Stop Alarm"
+                        android:background="@drawable/custom_button" />
+                    <!--android:layout_below="@id/timePicker"-->
+
+                    <Button
+                        android:id="@+id/start_alarm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginBottom="47dp"
+                        android:layout_marginStart="200dp"
+                        android:text="Start Alarm"
+                        android:background="@drawable/custom_button" />
+                    
+                    <TextView
+                        android:id="@+id/updateText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Did you set the alarm?"
+                        android:textSize="20sp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginStart="90dp"/>
+
+                    <!--<android.support.v7.widget.AppCompatTextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:text="Tab 1"-->
+                        <!--android:textSize="20sp"-->
+                        <!--android:gravity="center"/>-->
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/stopwatch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#00FF80">
+
+                    <TextView
+                        android:id="@+id/txtStopwatch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="STOPWATCH"
+                        android:textSize="40dp"
+                        android:textAlignment="center"/>
+
+                    <TextView
+                        android:id="@+id/tvTimer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00:00:00"
+                        android:textSize="75dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/txtStopwatch"
+                        android:layout_margin="15dp"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:id="@+id/relativeLayout"
+                        android:layout_margin="15dp">
+
+                        <ImageView
+                            android:id="@+id/btnStart"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_play"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@id/btnReset"/>
+
+                        <TextView
+                            android:id="@+id/txtPlay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Start"
+                            android:layout_marginLeft="95dp"
+                            android:layout_below="@id/btnStart"
+                            android:textColor="#272727"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/btnPause"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_pause"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@id/btnReset"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/txtPause"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pause"
+                            android:layout_marginLeft="95dp"
+                            android:layout_below="@id/btnPause"
+                            android:visibility="gone"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/btnReset"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_reset"
+                            android:layout_centerInParent="true"
+                            android:layout_centerVertical="true"/>
+
+                        <TextView
+                            android:id="@+id/txtReset"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Reset"
+                            android:textStyle="bold"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@id/btnReset"
+                            android:textColor="#272727"/>
+
+                        <ImageView
+                            android:id="@+id/btnLap"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/btnReset"
+                            android:src="@drawable/ic_timer"
+                            android:layout_centerVertical="true"/>
+
+                        <TextView
+                            android:id="@+id/txtLap"
+                            android:layout_marginLeft="45dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Lap"
+                            android:layout_toRightOf="@id/txtReset"
+                            android:textStyle="bold"
+                            android:layout_below="@id/btnReset"
+                            android:textColor="#272727"/>
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="270dp"
+                        android:layout_height="1dp"
+                        android:background="#808080"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/tvTimer">
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginRight="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:id="@+id/linearView"
+                        android:layout_below="@id/tvTimer"
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp">
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:id="@+id/tvTimeContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"/>
+
+                        </ScrollView>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+                
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </TabHost>
+
+</LinearLayout>
